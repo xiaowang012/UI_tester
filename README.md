@@ -1,4 +1,4 @@
-# Django +selenium 实现简单的UI自动化测试
+# Django + selenium 实现简单的UI自动化测试软件
 
 ## 1.界面展示
 
