@@ -1,7 +1,9 @@
 #coding=utf-8
+from django.http import HttpResponse
 from django.shortcuts import render,redirect
 from django.contrib import auth
 from . import forms
+from selenium_scripts import main
 
 # Create your views here.
 # 127.0.0.1:5000 (仅输入IP+PORT) 判断是否在登录状态
@@ -33,7 +35,7 @@ def login(request):
             else:
                 request.session["is_login"] = True
                 auth.login(request,login_user_obj)
-                return redirect('/home/')
+                return redirect('/my_testcase/')
                 
         else:
             return render(request, "login.html", {"form": form})
@@ -106,3 +108,15 @@ def my_testcase(request):
         #     data.style = random.choice(['success','info','warning','error'])
         # return render(request,'my_testcase.html',{'form':form,'list1':book_info,'dic1':dic1})
         return render(request,'my_testcase.html')
+
+#执行测试用例
+def run_testcases(request):
+    if request.method == 'GET':
+        browser_type = request.GET.get('browser_type')
+        url = request.GET.get('url')
+        element = request.GET.get('element')
+        input_data = request.GET.get('input_data')
+        confirm_button = request.GET.get('confirm_button')
+        main.TestCase(browser_type = browser_type,url = url,elemnet = element,input_data = input_data,confirm_button = confirm_button)
+    
+    return HttpResponse('RUN OK')
