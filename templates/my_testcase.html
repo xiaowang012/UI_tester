@@ -112,6 +112,62 @@
                                     </div>
                                 </div>
                             </div> 
+                            <nav  class="navbar navbar-default" role="navigation">
+                                <div class="navbar-header">
+                                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">测试用例集</a>
+                                </div>
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav">
+                                        <li class="dropdown">
+                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">项目分类<strong class="caret"></strong></a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                     <a href="/home/search/type?type_1=Python&number=1">Python</a>    
+                                                </li>
+                                                <li class="divider">
+                                                </li>
+                                                <li>
+                                                     <a href="/home/search/type?type_1=C&number=1">C</a>
+                                                </li>
+                                                <li class="divider">
+                                                </li>
+                                                <li>
+                                                     <a href="/home/search/type?type_1=C++&number=1">C++</a>
+                                                </li>
+                                                <li class="divider">
+                                                </li>
+                                                <li>
+                                                     <a href="/home/search/type?type_1=Java&number=1">java</a>
+                                                </li>
+                                                <li class="divider">
+                                                </li>
+                                                <li>
+                                                     <a href="/home/search/type?type_1=Javascript&number=1">javascript</a>
+                                                </li>
+                                                <li class="divider">
+                                                </li>
+                                                <li>
+                                                    <a href="/home/search/type?type_1=Linux&number=1">Linux</a>
+                                                   </li>
+                                                <li class="divider">
+                                                </li>
+                                                <li>
+                                                    <a href="/home/search/type?type_1=Go&number=1">Go</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <form class="navbar-form navbar-left" role="search" action="/home/search/page?num=1" method="post" >
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name = "book_name" />
+                                        </div> <button type="submit" class="btn btn-default">查询</button><a style="margin-left: 20px;" type="submit" class="btn btn-default" href="/home" >重置</a>
+                                        <div class="contain">
+                                            <p style="color:red">{%if dic1.errors %}{{ dic1.errors }} {% endif %}</p>
+                                         </div>
+                                    </form>   
+                                </div>  
+                            </nav>
                             <table style="margin-top: 20px;" class="table table-bordered">
                                 <thead>
                                     <tr>
@@ -137,11 +193,152 @@
                                             断言数据
                                         </th>
                                         <th>
-                                            <a role="button" id="modal-207299" href="#modal-container-207299" style="font-size: smaller;" class="btn btn-primary" data-toggle="modal" >添加</a><a role="button" id="modal-207300" href="#modal-container-207300" class="btn btn-default" style="font-size: smaller;margin-left: 17px;" data-toggle="modal" >导入</a>
+                                            <a role="button" id="modal-207299" href="#modal-container-207299" style="font-size: smaller;" class="btn btn-primary" data-toggle="modal" >执行全部</a><a role="button" id="modal-207300" href="#modal-container-207300" class="btn btn-default" style="font-size: smaller;margin-left: 17px;" data-toggle="modal" >导入</a>
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <tr class="success">
+                                        <td>
+                                            1
+                                        </td>
+                                        <td>
+                                            输入框
+                                        </td>
+                                        <td>
+                                            https://github.com
+                                        </td>
+                                        <td>
+                                            id#password
+                                        </td>
+                                        <td>
+                                            xiaowang 
+                                        </td>
+                                        <td>
+                                            click
+                                        </td>
+                                        <td>
+                                            None
+                                        </td>
+                                        <td>
+                                            <a id="modal-207301" onclick="parameter_id('{{ username }}','{{ chinese_name }}','{{ sex }}','{{ birthday }}','{{ email}}','{{ group_id }}')" href="#modal-container-207301" role="button" style="font-size: x-small;" class="btn btn-default" data-toggle="modal">执行</a><button class="btn btn-default btn-primary" style="margin-left: 15px;font-size: x-small;" onclick="delete_confirm('/management/userTable/delete?username={{ item.username }}')">删除</button>
+                                        </td>
+                                    </tr>  
+                                </tbody>
+                                <tbody>
+                                    <tr class="error">
+                                        <td>
+                                            2
+                                        </td>
+                                        <td>
+                                            输入框
+                                        </td>
+                                        <td>
+                                            https://github.com
+                                        </td>
+                                        <td>
+                                            id#password
+                                        </td>
+                                        <td>
+                                            xiaowang 
+                                        </td>
+                                        <td>
+                                            click
+                                        </td>
+                                        <td>
+                                            None
+                                        </td>
+                                        <td>
+                                            <a id="modal-207301" onclick="parameter_id('{{ username }}','{{ chinese_name }}','{{ sex }}','{{ birthday }}','{{ email}}','{{ group_id }}')" href="#modal-container-207301" role="button" style="font-size: x-small;" class="btn btn-default" data-toggle="modal">执行</a><button class="btn btn-default btn-primary" style="margin-left: 15px;font-size: x-small;" onclick="delete_confirm('/management/userTable/delete?username={{ item.username }}')">删除</button>
+                                        </td>
+                                    </tr>  
+                                </tbody>
+                                <tbody>
+                                    <tr class="">
+                                        <td>
+                                            3
+                                        </td>
+                                        <td>
+                                            输入框
+                                        </td>
+                                        <td>
+                                            https://github.com
+                                        </td>
+                                        <td>
+                                            id#password
+                                        </td>
+                                        <td>
+                                            xiaowang 
+                                        </td>
+                                        <td>
+                                            click
+                                        </td>
+                                        <td>
+                                            None
+                                        </td>
+                                        <td>
+                                            <a id="modal-207301" onclick="parameter_id('{{ username }}','{{ chinese_name }}','{{ sex }}','{{ birthday }}','{{ email}}','{{ group_id }}')" href="#modal-container-207301" role="button" style="font-size: x-small;" class="btn btn-default" data-toggle="modal">执行</a><button class="btn btn-default btn-primary" style="margin-left: 15px;font-size: x-small;" onclick="delete_confirm('/management/userTable/delete?username={{ item.username }}')">删除</button>
+                                        </td>
+                                    </tr>  
+                                </tbody>
+                                <tbody>
+                                    <tr class="success">
+                                        <td>
+                                            4
+                                        </td>
+                                        <td>
+                                            输入框
+                                        </td>
+                                        <td>
+                                            https://github.com
+                                        </td>
+                                        <td>
+                                            id#password
+                                        </td>
+                                        <td>
+                                            xiaowang 
+                                        </td>
+                                        <td>
+                                            click
+                                        </td>
+                                        <td>
+                                            None
+                                        </td>
+                                        <td>
+                                            <a id="modal-207301" onclick="parameter_id('{{ username }}','{{ chinese_name }}','{{ sex }}','{{ birthday }}','{{ email}}','{{ group_id }}')" href="#modal-container-207301" role="button" style="font-size: x-small;" class="btn btn-default" data-toggle="modal">执行</a><button class="btn btn-default btn-primary" style="margin-left: 15px;font-size: x-small;" onclick="delete_confirm('/management/userTable/delete?username={{ item.username }}')">删除</button>
+                                        </td>
+                                    </tr>  
+                                </tbody>
+                                <tbody>
+                                    <tr class="success">
+                                        <td>
+                                            5
+                                        </td>
+                                        <td>
+                                            输入框
+                                        </td>
+                                        <td>
+                                            https://github.com
+                                        </td>
+                                        <td>
+                                            id#password
+                                        </td>
+                                        <td>
+                                            xiaowang 
+                                        </td>
+                                        <td>
+                                            click
+                                        </td>
+                                        <td>
+                                            None
+                                        </td>
+                                        <td>
+                                            <a id="modal-207301" onclick="parameter_id('{{ username }}','{{ chinese_name }}','{{ sex }}','{{ birthday }}','{{ email}}','{{ group_id }}')" href="#modal-container-207301" role="button" style="font-size: x-small;" class="btn btn-default" data-toggle="modal">执行</a><button class="btn btn-default btn-primary" style="margin-left: 15px;font-size: x-small;" onclick="delete_confirm('/management/userTable/delete?username={{ item.username }}')">删除</button>
+                                        </td>
+                                    </tr>  
+                                </tbody>
+
+                                <!-- <tbody>
                                     {% for item in list1 %}
                                         <tr class="{{ item.style }}">
                                             <td>
@@ -171,7 +368,7 @@
                                         </tr>  
                                     {% endfor %}
                                     
-                                </tbody>
+                                </tbody> -->
                             </table>
                             <!-- 添加用户模态框 -->
                             <div class="modal fade" id="modal-container-207299" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -335,7 +532,7 @@
                     <div class="col-md-12 column">
                         <p>
                             <div>
-                                Github项目地址:<a href="https://github.com/xiaowang012/GardenPlatform.git">点击进入</a>
+                                Github项目地址:<a href="https://github.com/xiaowang012/UI_tester.git">点击进入</a>
                                 邮箱: 1300202481@qq.com
                             </div>
                         </p>
