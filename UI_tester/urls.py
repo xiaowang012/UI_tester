@@ -19,9 +19,10 @@ from testerApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/', views.host),
+    path('', views.host),
     path('login/', views.login),
     path('register/', views.register),
     path('logout/', views.logout),
     path('my_testcase/', views.my_testcase),
+    path('run_testcase',views.run_testcases,)
 ]
